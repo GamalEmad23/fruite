@@ -40,7 +40,7 @@ class AppColors {
 
   /* ================= Buttons ================= */
 
-  static const Color buttonPrimary = Color(0xFF4CAF50);
+  static const Color buttonPrimary = Color(0xFF204F38);
   static const Color buttonSecondary = Color(0xFFFFC107);
   static const Color buttonDisabled = Color(0xFFBDBDBD);
 
@@ -60,6 +60,7 @@ class AppColors {
   /* ================= Shadows ================= */
 
   static const Color shadow = Color(0x1A000000);
+  static const Color black = Colors.black;
 
   /* ================= Ratings / Favorites ================= */
 

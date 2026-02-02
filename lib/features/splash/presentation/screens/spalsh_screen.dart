@@ -1,7 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:fruit/features/onboarding/presentation/screens/onboarding_screen.dart';
+import 'package:fruit/features/onboarding/presentation/screens/main_onboarding.dart';
 
 class SpalshScreen extends StatefulWidget {
   const SpalshScreen({super.key});
@@ -16,8 +16,8 @@ class _SpalshScreenState extends State<SpalshScreen> {
 @override
 void initState() {
   super.initState();
-      Future.delayed(Duration(seconds: 3)).then(
-        (value) => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => OnboardingScreen(),)),
+      Future.delayed(Duration(seconds: 4)).then(
+        (value) => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainOnboarding(),)),
       );
     
 }
@@ -25,7 +25,10 @@ void initState() {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Image.asset("assets/images/splash.png"),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        child: Image.asset("assets/images/splash.png" , fit: BoxFit.cover,)),
     );
   }
 }

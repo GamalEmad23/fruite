@@ -1,9 +1,10 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first, camel_case_types
+// ignore_for_file: public_member_api_docs, sort_constructors_first, camel_case_types, prefer_const_constructors_in_immutables
 // ignore_for_file: must_be_immutable, prefer_final_fields, unused_local_variable
 
 import 'package:flutter/material.dart';
 import 'package:fruit/core/widgets/custome_button.dart';
 import 'package:fruit/core/widgets/custome_text.dart';
+import 'package:fruit/features/auth/presentation/screens/general_auth_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import 'package:fruit/core/themes/app_colors.dart';
@@ -61,10 +62,10 @@ class _MainOnboardingState extends State<MainOnboarding> {
               controller: _pageController, // PageController
               count: pages.length,
               axisDirection: Axis.horizontal,
-              effect: ColorTransitionEffect(
+              effect: ScrollingDotsEffect(
                 dotColor: AppColors.buttonDisabled,
-                activeDotColor: AppColors.iconPrimary,
-              ),
+                activeDotColor: AppColors.buttonPrimary,
+              )
             ),
           ),
 
@@ -73,6 +74,7 @@ class _MainOnboardingState extends State<MainOnboarding> {
             w: w,
             onPressed: () {
               if (currentIndex == pages.length - 1) {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => GeneralAuthScreen(),));
               } else {
                 _pageController.nextPage(
                   duration: Duration(milliseconds: 400),

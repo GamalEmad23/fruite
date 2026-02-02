@@ -1,4 +1,4 @@
-// ignore_for_file: use_build_context_synchronously
+// ignore_for_file: use_build_context_synchronously, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 import 'package:fruit/features/onboarding/presentation/screens/main_onboarding.dart';

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit/core/themes/app_colors.dart';
 import 'package:fruit/core/widgets/custome_text.dart';
+import 'package:fruit/features/auth/presentation/screens/general_auth_screen.dart';
 
 
 class OnboardingScreen extends StatelessWidget {
@@ -19,12 +20,17 @@ class OnboardingScreen extends StatelessWidget {
 
           ///Skip text
           Padding(
-            padding:  EdgeInsets.only(left: w*.8 , top: h*.025),
-            child: Column(
-              children: [
-                customeText(text: "Skip", fontSize: 15 , textColor: AppColors.textSecondary,),
-                Container(height: 2,width: w*.07,color: AppColors.textSecondary,)
-              ],
+            padding:  EdgeInsets.only(left: w*.8 , top: h*.06),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => GeneralAuthScreen(),));
+              },
+              child: Column(
+                children: [
+                  customeText(text: "Skip", fontSize: 15 , textColor: AppColors.textSecondary,),
+                  Container(height: 2,width: w*.07,color: AppColors.textSecondary,)
+                ],
+              ),
             ),
           ),
         

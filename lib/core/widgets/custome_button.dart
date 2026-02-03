@@ -14,7 +14,7 @@ class customeButton extends StatelessWidget {
     this.color,
     this.radius,
     this.minWidth,
-    required this.text,
+    required this.text, this.bottonPading,
   });
 
   final double h;
@@ -24,11 +24,12 @@ class customeButton extends StatelessWidget {
   final double? radius;
   final double? minWidth;
   final customeText text;
+  final double? bottonPading;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: h * .1),
+      padding: EdgeInsets.only(bottom:bottonPading ?? h * .1),
       child: MaterialButton(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(radius ?? 20),

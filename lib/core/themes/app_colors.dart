@@ -4,6 +4,7 @@ class AppColors {
 
   /* ================= Primary Palette ================= */
 
+  static const Color white = Color(0xFFFFFFFF);
   static const Color primary = Color(0xFF4CAF50);
   static const Color primaryLight = Color(0xFF81C784);
   static const Color primaryDark = Color(0xFF388E3C);

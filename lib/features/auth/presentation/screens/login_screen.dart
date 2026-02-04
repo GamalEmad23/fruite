@@ -1,25 +1,23 @@
-// ignore_for_file: unused_local_variable
-
 import 'package:flutter/material.dart';
 import 'package:fruit/core/themes/app_colors.dart';
 import 'package:fruit/core/widgets/custome_button.dart';
 import 'package:fruit/core/widgets/custome_text.dart';
+import 'package:fruit/features/auth/presentation/screens/forget_password_screen.dart';
 import 'package:fruit/features/auth/presentation/screens/general_auth_screen.dart';
-import 'package:fruit/features/auth/presentation/screens/login_screen.dart';
+import 'package:fruit/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:fruit/features/auth/presentation/widgets/custome_auth_screens_title.dart';
 import 'package:fruit/features/auth/presentation/widgets/custome_phone_form_field.dart';
 import 'package:fruit/features/auth/presentation/widgets/custome_text_form_field.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   GlobalKey<FormState> globalKey = GlobalKey();
-  TextEditingController name = TextEditingController();
   TextEditingController phone = TextEditingController();
   TextEditingController password = TextEditingController();
   String fullPhone = '';
@@ -50,19 +48,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                customeAuthScreensTitle(text: "Sign Up to Wikala"),
+                customeAuthScreensTitle(text: " Login to Wikala"),
                 SizedBox(height: h * .04),
-
-                /// full name textformfield
-                customeTextFormField(
-                  text: 'Full name *',
-                  h: h,
-                  w: w,
-                  hint: 'First and Last Name',
-                  controller: name,
-                ),
-
-                SizedBox(height: h * .02),
 
                 /// phone textformfield
                 CustomPhoneFormField(
@@ -70,7 +57,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   h: h,
                   w: w,
                   onChanged: (value) {
-                    fullPhone = value; // +201xxxxxxxx
+                    setState(() {
+                      fullPhone = value;
+                    });
                   },
                 ),
 
@@ -85,6 +74,37 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   controller: password,
                 ),
 
+                SizedBox(height: h * .01),
+
+                ///Forget password
+                Padding(
+                  padding: EdgeInsets.only(left: w * .5),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ForgetPasswordScreen(),
+                        ),
+                      );
+                    },
+                    child: Column(
+                      children: [
+                        customeText(
+                          text: "Forget Password?",
+                          fontSize: 18,
+                          textColor: AppColors.info,
+                        ),
+                        Container(
+                          height: 2,
+                          width: w * .4,
+                          color: AppColors.info,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
                 ///SignUp Button
                 SizedBox(height: h * .05),
                 customeButton(
@@ -94,7 +114,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   w: w,
                   onPressed: () {},
                   text: customeText(
-                    text: "Sign Up",
+                    text: "Login",
                     fontSize: 18,
                     textColor: AppColors.white,
                   ),
@@ -104,7 +124,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   mainAxisAlignment: .center,
                   children: [
                     customeText(
-                      text: "Already have an account?",
+                      text: "Don’t have an account? ",
                       fontSize: 18,
                       textColor: AppColors.black,
                     ),
@@ -125,12 +145,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 onTap: () {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
-                                      builder: (context) => LoginScreen(),
+                                      builder: (context) => SignUpScreen(),
                                     ),
                                   );
                                 },
                                 child: customeText(
-                                  text: "Login",
+                                  text: "Sign Up",
                                   fontSize: 18,
                                   textColor: AppColors.info,
                                 ),

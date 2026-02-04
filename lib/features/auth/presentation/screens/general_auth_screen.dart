@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit/core/themes/app_colors.dart';
 import 'package:fruit/core/widgets/custome_text.dart';
+import 'package:fruit/features/auth/presentation/screens/login_screen.dart';
 import 'package:fruit/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:fruit/features/auth/presentation/widgets/custome_auth_card.dart';
 import 'package:fruit/features/auth/presentation/widgets/custome_auth_screens_title.dart';
@@ -25,7 +26,9 @@ class GeneralAuthScreen extends StatelessWidget {
             
              SizedBox(height: h*.05,),
             /// Sign in with phone card
-            customeAuthCard(h: h, w: w, image: 'assets/icons/Icon material-local-phone.png', text: 'Sign in with Phone Number', background: AppColors.white, textColor: AppColors.black,),
+            GestureDetector(
+              onTap: () => Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => LoginScreen(),) , (route) => false,),
+              child: customeAuthCard(h: h, w: w, image: 'assets/icons/Icon material-local-phone.png', text: 'Sign in with Phone Number', background: AppColors.white, textColor: AppColors.black,)),
             SizedBox(height: h*.03,),
             /// Sign in with google card
             customeAuthCard(h: h, w: w, image: 'assets/icons/google.png', text: 'Sign in with Google', background: AppColors.white, textColor: AppColors.black),

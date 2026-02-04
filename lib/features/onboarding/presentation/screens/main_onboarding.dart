@@ -62,9 +62,11 @@ class _MainOnboardingState extends State<MainOnboarding> {
               controller: _pageController, // PageController
               count: pages.length,
               axisDirection: Axis.horizontal,
-              effect: ScrollingDotsEffect(
+              effect: ColorTransitionEffect(
                 dotColor: AppColors.buttonDisabled,
                 activeDotColor: AppColors.buttonPrimary,
+                dotHeight: 12,
+                dotWidth: 12
               )
             ),
           ),

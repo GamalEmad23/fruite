@@ -3,9 +3,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:fruit/core/widgets/custome_button.dart';
+import 'package:fruit/core/widgets/custome_indecator.dart';
 import 'package:fruit/core/widgets/custome_text.dart';
 import 'package:fruit/features/auth/presentation/screens/general_auth_screen.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import 'package:fruit/core/themes/app_colors.dart';
 import 'package:fruit/features/onboarding/presentation/screens/onboarding_screen.dart';
@@ -56,20 +56,7 @@ class _MainOnboardingState extends State<MainOnboarding> {
             ),
           ),
 
-          Padding(
-            padding: EdgeInsets.only(bottom: h * .1),
-            child: SmoothPageIndicator(
-              controller: _pageController, // PageController
-              count: pages.length,
-              axisDirection: Axis.horizontal,
-              effect: ColorTransitionEffect(
-                dotColor: AppColors.buttonDisabled,
-                activeDotColor: AppColors.buttonPrimary,
-                dotHeight: 12,
-                dotWidth: 12
-              )
-            ),
-          ),
+          customeIndecator(h: h, pageController: _pageController, pages: pages),
 
           customeButton(
             h: h,
@@ -95,3 +82,4 @@ class _MainOnboardingState extends State<MainOnboarding> {
     );
   }
 }
+

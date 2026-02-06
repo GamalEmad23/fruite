@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit/features/splash/presentation/screens/spalsh_screen.dart';
+import 'package:fruit/features/buttom_nav_bar/screens/nav_bar_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SpalshScreen(),
+      home: NavBarScreen(),
     );
   }
 }

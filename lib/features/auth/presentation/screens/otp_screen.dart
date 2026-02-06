@@ -5,6 +5,7 @@ import 'package:fruit/core/widgets/custome_text.dart';
 import 'package:fruit/features/auth/presentation/screens/forget_password_screen.dart';
 import 'package:fruit/features/auth/presentation/widgets/custome_auth_screens_title.dart';
 import 'package:fruit/features/auth/presentation/widgets/custome_otp_fields.dart';
+import 'package:fruit/features/home/presentation/screens/home_screen.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
@@ -47,7 +48,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
                PinputExample(),
 
-                ///SignUp Button
+                ///Confirm Button
                 SizedBox(height: h * .05),
                 customeButton(
                   bottonPading: h * .03,
@@ -55,7 +56,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   h: h,
                   w: w,
                   onPressed: () {
-                    // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => OtpScreen(),), (route) => false,);
+                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomeScreen(),), (route) => false,);
                   },
                   text: customeText(
                     text: "Confirm",
@@ -84,7 +85,6 @@ class _OtpScreenState extends State<OtpScreen> {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                
                               },
                               child: customeText(
                                 text: "Send Again",

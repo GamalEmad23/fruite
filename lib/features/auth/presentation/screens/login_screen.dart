@@ -8,6 +8,7 @@ import 'package:fruit/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:fruit/features/auth/presentation/widgets/custome_auth_screens_title.dart';
 import 'package:fruit/features/auth/presentation/widgets/custome_phone_form_field.dart';
 import 'package:fruit/features/auth/presentation/widgets/custome_text_form_field.dart';
+import 'package:fruit/features/buttom_nav_bar/screens/nav_bar_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -112,7 +113,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   minWidth: w * .7,
                   h: h,
                   w: w,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => NavBarScreen(),), (route) => false,);
+                  },
                   text: customeText(
                     text: "Login",
                     fontSize: 18,

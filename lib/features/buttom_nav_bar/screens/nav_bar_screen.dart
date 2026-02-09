@@ -2,9 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:fruit/core/themes/app_colors.dart';
-import 'package:fruit/features/auth/presentation/screens/login_screen.dart';
 import 'package:fruit/features/buttom_nav_bar/screens/basket_tab_bar.dart';
+import 'package:fruit/features/favourit/presentation/screens/favourit_screen.dart';
 import 'package:fruit/features/home/presentation/screens/home_screen.dart';
+import 'package:fruit/features/orders/presentation/screens/orders_screens.dart';
 
 class NavBarScreen extends StatefulWidget {
   const NavBarScreen({super.key});
@@ -18,8 +19,9 @@ class _NavBarScreenState extends State<NavBarScreen> {
   PageController pageController = PageController();
   List pages = [
     HomeScreen(),
-    LoginScreen(),
+    OrdersScreens(),
     BasketTab(),
+    FavouritScreen(),
     HomeScreen()];
 
   final List<Map<String, dynamic>> navItems = [

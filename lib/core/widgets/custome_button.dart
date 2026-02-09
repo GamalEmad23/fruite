@@ -14,11 +14,12 @@ class customeButton extends StatelessWidget {
     this.color,
     this.radius,
     this.minWidth,
-    required this.text, this.bottonPading,
+    required this.text, this.bottonPading, this.hight,
   });
 
   final double h;
   final double w;
+  final double? hight;
   final void Function()? onPressed;
   final Color? color;
   final double? radius;
@@ -35,7 +36,7 @@ class customeButton extends StatelessWidget {
           borderRadius: BorderRadiusGeometry.circular(radius ?? 20),
         ),
         minWidth: minWidth ?? w * .4,
-        height: h * .06,
+        height: hight ??  h * .06,
         color: color ?? AppColors.buttonPrimary,
         onPressed: onPressed,
         child: text,

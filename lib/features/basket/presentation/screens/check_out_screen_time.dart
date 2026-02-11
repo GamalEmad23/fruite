@@ -26,6 +26,13 @@ class _CheckOutScreenTimeState extends State<CheckOutScreenTime> {
       backgroundColor: AppColors.background,
       appBar: AppBar(
         backgroundColor: AppColors.background,
+        title: customeText(
+          text: "Checkout",
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+          textColor: AppColors.buttonPrimary,
+        ),
+        centerTitle: true,
         leading: IconButton(
           onPressed: () {
             Navigator.of(

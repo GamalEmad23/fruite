@@ -9,18 +9,18 @@ class customePriceDetailsRow extends StatelessWidget {
   const customePriceDetailsRow({
     super.key,
     required this.title,
-    required this.price,
+     this.price,
     required this.kd,
   });
 
   final Widget title;
-  final double price;
+  final double? price;
   final String kd;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       child: Row(
         mainAxisAlignment: .spaceBetween,
         children: [
@@ -28,7 +28,7 @@ class customePriceDetailsRow extends StatelessWidget {
           Row(
             children: [
               customeText(
-                text: price.toString(),
+                text: price?.toString() ?? "",
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 textColor: AppColors.buttonPrimary,

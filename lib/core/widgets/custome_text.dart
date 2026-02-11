@@ -14,9 +14,11 @@ final String text;
 final double fontSize;
 final FontWeight? fontWeight;
 final Color? textColor;
+
   @override
   Widget build(BuildContext context) {
-    return Text(text , style: TextStyle(
+    return Text(
+      text , style: TextStyle(
       color:textColor ?? AppColors.shadow,
       fontSize: fontSize,
       fontWeight: fontWeight ?? FontWeight.normal

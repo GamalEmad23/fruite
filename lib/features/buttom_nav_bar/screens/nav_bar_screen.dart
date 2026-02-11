@@ -5,6 +5,7 @@ import 'package:fruit/core/themes/app_colors.dart';
 import 'package:fruit/features/buttom_nav_bar/screens/basket_tab_bar.dart';
 import 'package:fruit/features/favourit/presentation/screens/favourit_screen.dart';
 import 'package:fruit/features/home/presentation/screens/home_screen.dart';
+import 'package:fruit/features/more/presentation/screens/more_screen.dart';
 import 'package:fruit/features/orders/presentation/screens/orders_screens.dart';
 
 class NavBarScreen extends StatefulWidget {
@@ -22,7 +23,8 @@ class _NavBarScreenState extends State<NavBarScreen> {
     OrdersScreens(),
     BasketTab(),
     FavouritScreen(),
-    HomeScreen()];
+    MoreScreen()
+    ];
 
   final List<Map<String, dynamic>> navItems = [
     {"icon": "assets/icons/home.png", "label": "Home"},

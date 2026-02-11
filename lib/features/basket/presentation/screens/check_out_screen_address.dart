@@ -24,6 +24,13 @@ class _CheckOutScreenAddressState extends State<CheckOutScreenAddress> {
       backgroundColor: AppColors.background,
       appBar: AppBar(
         backgroundColor: AppColors.background,
+          title: customeText(
+          text: "Checkout",
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+          textColor: AppColors.buttonPrimary,
+        ),
+        centerTitle: true,
         leading: IconButton(
           onPressed: () {
             Navigator.of(
@@ -81,7 +88,7 @@ class _CheckOutScreenAddressState extends State<CheckOutScreenAddress> {
 
           Container(
             width: w * .9,
-            height: h * .2,
+            height: h * .3,
             decoration: BoxDecoration(
               color: AppColors.white,
               borderRadius: BorderRadius.circular(20),

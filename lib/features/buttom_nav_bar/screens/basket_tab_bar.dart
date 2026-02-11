@@ -5,6 +5,9 @@ import 'package:fruit/features/basket/presentation/screens/basket_screen.dart';
 import 'package:fruit/features/basket/presentation/screens/check_out_screen_address.dart';
 import 'package:fruit/features/basket/presentation/screens/check_out_screen_payment.dart';
 import 'package:fruit/features/basket/presentation/screens/check_out_screen_time.dart';
+import 'package:fruit/features/basket/presentation/screens/obs_check_out_screen.dart';
+import 'package:fruit/features/basket/presentation/screens/success_check_out_screen.dart';
+import 'package:fruit/features/more/presentation/screens/more_screen.dart';
 
 class BasketTab extends StatelessWidget {
   const BasketTab({super.key});
@@ -35,6 +38,22 @@ class BasketTab extends StatelessWidget {
             return MaterialPageRoute(
               builder: (_) => const CheckOutScreenPayment(),
             );
+
+          case '/success_checkout':
+            return MaterialPageRoute(
+              builder: (_) => const SuccessCheckOutScreen(),
+            );
+          
+          case '/obs_checkout':
+            return MaterialPageRoute(
+              builder: (_) => const ObsCheckOutScreen(),
+            );
+          
+          case '/more':
+            return MaterialPageRoute(
+              builder: (_) => const MoreScreen(),
+            );
+
 
           default: 
             return MaterialPageRoute(

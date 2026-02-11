@@ -14,7 +14,7 @@ class customeButton extends StatelessWidget {
     this.color,
     this.radius,
     this.minWidth,
-    required this.text, this.bottonPading, this.hight,
+    required this.text, this.bottonPading, this.hight, this.Boardercolor,
   });
 
   final double h;
@@ -22,6 +22,7 @@ class customeButton extends StatelessWidget {
   final double? hight;
   final void Function()? onPressed;
   final Color? color;
+  final Color? Boardercolor;
   final double? radius;
   final double? minWidth;
   final customeText text;
@@ -33,6 +34,10 @@ class customeButton extends StatelessWidget {
       padding: EdgeInsets.only(bottom:bottonPading ?? h * .1),
       child: MaterialButton(
         shape: RoundedRectangleBorder(
+          side: BorderSide(
+            color: Boardercolor ?? Colors.transparent,
+            width: 2,
+          ),
           borderRadius: BorderRadiusGeometry.circular(radius ?? 20),
         ),
         minWidth: minWidth ?? w * .4,
